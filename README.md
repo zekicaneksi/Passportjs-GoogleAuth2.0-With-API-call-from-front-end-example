@@ -9,6 +9,9 @@ clientSecret="YOUR_CLIENT_SECRET" -> Google project's client secret
 callbackURL="YOUR_CALLBACK_URL_EXAMPLE=/auth-callback" -> Authorized callback URL
 ```
 
+To setup the project;
+`npm install` and then `node index.js`
+
 ### Guides i followed while creating the project
 
 To understand how authorization works; <br>
