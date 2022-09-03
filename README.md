@@ -11,20 +11,20 @@ callbackURL="YOUR_CALLBACK_URL_EXAMPLE=/auth-callback" -> Authorized callback UR
 
 ### Guides i followed while creating the project
 
-To understand how authorization works;
-https://developers.google.com/identity/oauth2/web/guides/how-user-authz-works
-How to create a google project;
+To understand how authorization works; <br>
+https://developers.google.com/identity/oauth2/web/guides/how-user-authz-works <br> <br>
+How to create a google project; <br>
 https://developers.google.com/identity/oauth2/web/guides/get-google-api-clientid
 
-I also enabled the Youtube Data API v3 from the Enabled API's and Services section of the project in Google Cloud Console (https://console.cloud.google.com/). (Because i wanted to make API calls to youtube data)
+I also enabled the Youtube Data API v3 from the Enabled API's and Services section of the project in Google Cloud Console (https://console.cloud.google.com/). (Because i wanted to make API calls to Youtube Data)
 
-Google's API explorer;
+Google's API explorer; <br>
 https://developers.google.com/apis-explorer
 
-To setup Passportjs;
+To setup Passportjs; <br>
 https://medium.com/@prashantramnyc/how-to-implement-google-authentication-in-node-js-using-passport-js-9873f244b55e
 
-How to refresh an access token;
+How to refresh an access token; <br>
 https://developers.google.com/identity/protocols/oauth2/web-server#offline
 
 ### While Deploying
