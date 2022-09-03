@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head></head>
+    <body>
+        <select id="subs-select"></select>
+        <button onclick="init();">refresh</button>
+        <a href="/logout">logout</button>
+
+        <script>
+            let accessToken='';
+            const selectElement = document.getElementById('subs-select');
+            let errorCount = 0; // If reaches 2 it means server can't give valid access tokens, and relogin is needed.
+
+            function init(){
+                if(errorCount === 2) window.location.href = '/logout';
+                getAccessToken().then(v => getSubs());
+            }
+
+            function getAccessToken(){
+                return fetch('/getAcessToken').then(response => response.json()).then((data) => accessToken=data);
+            }
+
+            function appendOption(value){
+                let opt = document.createElement('option');
+                opt.value = value;
+                opt.innerHTML = value;
+                selectElement.appendChild(opt);
+            }
+    
+            async function getSubs(){
+
+                selectElement.innerHTML='';
+
+                async function getPageOfSubs(pageToken){
+                    let nextPageToken;
+                    let url = "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&maxSize=10&mine=true"
+                    if(pageToken !== undefined) url += ("&pageToken="+pageToken);
+
+                    await fetch(url, {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`
+                        }
+                    }).then((response) => {
+                        if(response.status === 401 || response.status === 403) {
+                            init();
+                            errorCount++;
+                        } else errorCount=0;
+                        return response.json();
+                    }).then(data => {
+                        nextPageToken = data.nextPageToken;
+                        for(let i in data.items){
+                            appendOption(data.items[i].snippet.title);
+                        }
+                    });
+                    return nextPageToken;
+                }
+
+                let pageToken;
+                while(true){
+                    pageToken = await getPageOfSubs(pageToken);
+                    if(pageToken === undefined) break;
+                }
+
+            }
+    
+            init();
+    
+        </script>
+    </body>
+
+</html>
