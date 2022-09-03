@@ -17,9 +17,10 @@ To setup the project;
 To understand how authorization works; <br>
 https://developers.google.com/identity/oauth2/web/guides/how-user-authz-works <br> <br>
 How to create a google project; <br>
+(give your deployment domain when creating the origin, afterwards add the localhost from Google Cloud Console's (https://console.cloud.google.com/) Credentials section of the project) <br>
 https://developers.google.com/identity/oauth2/web/guides/get-google-api-clientid
 
-I also enabled the Youtube Data API v3 from the Enabled API's and Services section of the project in Google Cloud Console (https://console.cloud.google.com/). (Because i wanted to make API calls to Youtube Data)
+I also enabled the Youtube Data API v3 from the Enabled API's and Services section of the project in Google Cloud Console. (Because i wanted to make API calls to Youtube Data)
 
 Google's API explorer; <br>
 https://developers.google.com/apis-explorer
