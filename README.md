@@ -36,6 +36,6 @@ https://developers.google.com/identity/protocols/oauth2/web-server#offline
 - To get rid of the warning when authorizing the app for your google account;
 https://support.google.com/cloud/answer/7454865
 
-- The Authorized Origins and Redirect URI must be changed in the Credentials section of the projcet in Google Cloud Console
+- The Authorized Origins and Redirect URI must be changed in the Credentials section of the projcet in Google Cloud Console (localhost should be removed, and actual domain/origin must be addded)
 
 - express-session package is using MemoryStore which doesn't work in production. A proper store must be used (refer to npm page of [express-session](https://www.npmjs.com/package/express-session)). Also, while setting the session's config, secure flag should given as true for https.
