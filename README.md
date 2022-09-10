@@ -31,7 +31,7 @@ https://medium.com/@prashantramnyc/how-to-implement-google-authentication-in-nod
 How to refresh an access token; <br>
 https://developers.google.com/identity/protocols/oauth2/web-server#offline
 
-### While Deploying
+### When Deploying
 
 - To get rid of the warning when authorizing the app for your google account;
 https://support.google.com/cloud/answer/7454865
