@@ -6,7 +6,7 @@ Variables of the .env file;
 SECRET="YOUR_SECRET" -> Secret for sessions
 clientID="YOUR_CLIENT_ID" -> Google project's client ID
 clientSecret="YOUR_CLIENT_SECRET" -> Google project's client secret
-callbackURL="YOUR_CALLBACK_URL_EXAMPLE=/auth-callback" -> Authorized callback URL
+callbackURL="YOUR_CALLBACK_URL" --- example "/auth-callback" -> Authorized callback URL
 ```
 
 To setup the project;
